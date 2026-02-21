@@ -1,4 +1,4 @@
-name: Fresh Build For Boss
+name: Ultimate Build For Boss
 on:
   workflow_dispatch:
 jobs:
@@ -18,9 +18,7 @@ jobs:
           pip install buildozer cython kivy
       - name: Build with Buildozer
         run: |
-          yes | buildozer android debug
-        env:
-          ACCEPT_SDK_LICENSE: True
+          buildozer android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
